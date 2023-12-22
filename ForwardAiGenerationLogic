@@ -1,0 +1,81 @@
+Script 1: Select Subject and Generate Topics
+This script allows the user to select a subject and generates a list of topics related to that subject.
+# select_subject.py
+
+def select_subject():
+    subjects = ["Economics", "Math", "History", "Literature", "Science"]
+    print("Select a subject from the following:", subjects)
+    subject = input("Enter your choice: ").strip()
+    return subject if subject in subjects else None
+
+def generate_topics(subject):
+    # Predefined topics for each subject
+    topics_dict = {
+        "Economics": ["Microeconomics", "Macroeconomics", "International Economics", "Development Economics", "Behavioral Economics", "Environmental Economics", "Labor Economics", "Public Economics"],
+        # Define topics for other subjects
+    }
+    return topics_dict.get(subject, [])
+
+if __name__ == "__main__":
+    subject = select_subject()
+    if subject:
+        topics = generate_topics(subject)
+        print(f"Topics for {subject}: {topics}")
+    else:
+        print("Invalid subject selected.")
+\
+Script 2: Select Topic and Generate Quiz Topics
+This script takes the user's chosen topic and generates related quiz topics
+# select_topic.py
+
+def select_topic(topics):
+    print("Select a topic from the following:", topics)
+    topic = input("Enter your choice: ").strip()
+    return topic if topic in topics else None
+
+def generate_quiz_topics(topic):
+    # Placeholder for quiz topics. This can be expanded or integrated with OpenAI for dynamic generation.
+    quiz_topics_dict = {
+        "Microeconomics": ["Demand and Supply Analysis", "Consumer Behavior and Utility", "Production and Cost", "Market Structures"],
+        # Define quiz topics for other topics
+    }
+    return quiz_topics_dict.get(topic, [])
+
+if __name__ == "__main__":
+    # Example topics list, replace with actual topics from the previous script
+    example_topics = ["Microeconomics", "Macroeconomics"]
+    topic = select_topic(example_topics)
+    if topic:
+        quiz_topics = generate_quiz_topics(topic)
+        print(f"Quiz Topics for {topic}: {quiz_topics}")
+    else:
+        print("Invalid topic selected.")
+
+
+Script 3: Generate Study Material and Quiz
+This script generates study material and a quiz for the selected quiz topic. 
+# generate_material_and_quiz.py
+# This is a placeholder. Integration with OpenAI for content generation would happen here.
+
+def generate_study_material(quiz_topic):
+    # Integration with OpenAI to generate study material
+    study_material = f"Study material for {quiz_topic}"
+    return study_material
+
+def generate_quiz(quiz_topic):
+    # Integration with OpenAI to generate quiz questions
+    quiz = f"4-question quiz on {quiz_topic}"
+    return quiz
+
+if __name__ == "__main__":
+    # Example quiz topic, replace with actual quiz topic from the previous script
+    example_quiz_topic = "Demand and Supply Analysis"
+    study_material = generate_study_material(example_quiz_topic)
+    quiz = generate_quiz(example_quiz_topic)
+    print("Study Material:", study_material)
+    print("Quiz:", quiz)
+
+
+
+
+
